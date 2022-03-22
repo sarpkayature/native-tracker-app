@@ -203,6 +203,7 @@ __metadata:
   resolution: "api@workspace:."
   dependencies:
     bcrypt: ^5.0.1
+    body-parser: ^1.19.2
     dotenv: ^16.0.0
     express: ^4.17.3
     jsonwebtoken: ^8.5.1
@@ -286,7 +287,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"body-parser@npm:1.19.2":
+"body-parser@npm:1.19.2, body-parser@npm:^1.19.2":
   version: 1.19.2
   resolution: "body-parser@npm:1.19.2"
   dependencies:
