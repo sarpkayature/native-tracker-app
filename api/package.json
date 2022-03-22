@@ -1,12 +1,19 @@
 {
   "name": "api",
-  "packageManager": "yarn@3.2.0",
   "author": "sarpkaya ture",
+  "packageManager": "yarn@3.2.0",
+  "scripts": {
+    "start": "nodemon ./src/server.js"
+  },
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.2.7",
     "nodemon": "^2.0.15"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0"
   }
 }
