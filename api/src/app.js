@@ -2,8 +2,6 @@ const express = require("express");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 
-require("./modules/auth/models/User");
-
 //*Routes imports
 const publicRoutes = require("./modules/defaults/routes/public-routes-index");
 const protectedRoutes = require("./modules/defaults/routes/protected-routes-index");
@@ -17,8 +15,6 @@ publicRoutes.forEach((r) => app.use(r));
 
 //*Protected Routes
 protectedRoutes.forEach((r) => app.use(r));
-
-//TODO: AUTO REGISTER MODELS
 
 //*MIDDLEWARES
 if (process.env.NODE_ENV === "development") {
