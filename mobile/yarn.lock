@@ -1968,6 +1968,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-navigation/bottom-tabs@npm:^6.2.0":
+  version: 6.2.0
+  resolution: "@react-navigation/bottom-tabs@npm:6.2.0"
+  dependencies:
+    "@react-navigation/elements": ^1.3.1
+    color: ^3.1.3
+    warn-once: ^0.1.0
+  peerDependencies:
+    "@react-navigation/native": ^6.0.0
+    react: "*"
+    react-native: "*"
+    react-native-safe-area-context: ">= 3.0.0"
+    react-native-screens: ">= 3.0.0"
+  checksum: 8f576e254916ddef9bcbcc2ffea80f861854e2679b208504d5bf8202dd28fe008832bf882d7d47d36bfedb092bef3e500e5fe0a81cd2cdaf7891bd237e4b7063
+  languageName: node
+  linkType: hard
+
 "@react-navigation/core@npm:^3.7.9":
   version: 3.7.9
   resolution: "@react-navigation/core@npm:3.7.9"
@@ -5809,6 +5826,7 @@ __metadata:
   dependencies:
     "@babel/core": ^7.12.9
     "@react-native-community/masked-view": ^0.1.11
+    "@react-navigation/bottom-tabs": ^6.2.0
     "@react-navigation/native": ^6.0.8
     "@react-navigation/native-stack": ^6.5.0
     "@react-navigation/stack": ^6.1.1
@@ -5826,8 +5844,6 @@ __metadata:
     react-native-screens: ~3.10.1
     react-native-web: 0.17.1
     react-navigation: ^4.4.4
-    react-navigation-stack: ^2.10.4
-    react-navigation-tabs: ^2.11.2
   languageName: unknown
   linkType: soft
 
@@ -6586,13 +6602,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-lifecycles-compat@npm:^3.0.4":
-  version: 3.0.4
-  resolution: "react-lifecycles-compat@npm:3.0.4"
-  checksum: a904b0fc0a8eeb15a148c9feb7bc17cec7ef96e71188280061fc340043fd6d8ee3ff233381f0e8f95c1cf926210b2c4a31f38182c8f35ac55057e453d6df204f
-  languageName: node
-  linkType: hard
-
 "react-native-codegen@npm:^0.0.6":
   version: 0.0.6
   resolution: "react-native-codegen@npm:0.0.6"
@@ -6623,15 +6632,6 @@ __metadata:
     lodash: ^4.17.21
     prop-types: ^15.7.2
   checksum: 479386ee9814f2e72ebc1cf9494f4a74f3652e87bd79ccf5d78c3dea455d924b3b41016dce3da466155304cd4c1dac019907ca2667e1d9da42ab3f28d4362e29
-  languageName: node
-  linkType: hard
-
-"react-native-iphone-x-helper@npm:^1.3.0":
-  version: 1.3.1
-  resolution: "react-native-iphone-x-helper@npm:1.3.1"
-  peerDependencies:
-    react-native: ">=0.42.0"
-  checksum: 024376646009a966e33e12fc2358751830818b0fb73b1c601a64eb5e490d2dc43eec23668991b985a8c412a84d087f20eb45bb9b593567c08b66e741b7bddda5
   languageName: node
   linkType: hard
 
@@ -6702,18 +6702,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-tab-view@npm:^2.15.2":
-  version: 2.16.0
-  resolution: "react-native-tab-view@npm:2.16.0"
-  peerDependencies:
-    react: "*"
-    react-native: "*"
-    react-native-gesture-handler: "*"
-    react-native-reanimated: "*"
-  checksum: 0756c731144fd529c476db2121a681bf6d443fb7e739c62b36a0f35fea374973524901ac9195ea9aaa864b3c36d1831e4efac882f69bf6db83a0b3f2c95785cd
-  languageName: node
-  linkType: hard
-
 "react-native-web@npm:0.17.1":
   version: 0.17.1
   resolution: "react-native-web@npm:0.17.1"
@@ -6773,43 +6761,6 @@ __metadata:
   bin:
     react-native: cli.js
   checksum: 2af6748155e672597c6ecaab2bdf887dee6056b93d9601222edeb3870565ef7f626cfa2c4158b4611ec775b7340a2d89007373403a5307dec62f7c47875f1935
-  languageName: node
-  linkType: hard
-
-"react-navigation-stack@npm:^2.10.4":
-  version: 2.10.4
-  resolution: "react-navigation-stack@npm:2.10.4"
-  dependencies:
-    color: ^3.1.3
-    react-native-iphone-x-helper: ^1.3.0
-  peerDependencies:
-    "@react-native-community/masked-view": ">=0.1.0"
-    react: "*"
-    react-native: "*"
-    react-native-gesture-handler: ">= 1.5.0"
-    react-native-safe-area-context: ">= 0.6.0"
-    react-native-screens: ">=1.0.0 || >= 2.0.0-alpha.0 || >= 2.0.0-beta.0 || >= 2.0.0"
-    react-navigation: ^4.1.1
-  checksum: 70721e91b1ea32a3cdeefd7a2e514848d1a67b9ff25c7802e4154f48c7612a689a148cc43ecbf060250ba9fb12b0ae2ab7eb63ca31c33009fe48b0fec39d2a47
-  languageName: node
-  linkType: hard
-
-"react-navigation-tabs@npm:^2.11.2":
-  version: 2.11.2
-  resolution: "react-navigation-tabs@npm:2.11.2"
-  dependencies:
-    hoist-non-react-statics: ^3.3.2
-    react-lifecycles-compat: ^3.0.4
-    react-native-iphone-x-helper: ^1.3.0
-    react-native-tab-view: ^2.15.2
-  peerDependencies:
-    react: "*"
-    react-native: "*"
-    react-native-gesture-handler: ^1.0.0
-    react-native-reanimated: ^1.0.0-alpha
-    react-native-screens: ">=1.0.0 || >= 2.0.0-alpha.0 || >= 2.0.0-beta.0 || >= 2.0.0"
-    react-navigation: ^4.1.1
-  checksum: 8986abc4c186d02ef023833534ca4314ffadc0835f13c762fbf94581082a3d0bfd45fd4254580041797062b5aa3b82778c84218f187ec09242bc425730f391a0
   languageName: node
   linkType: hard
 
