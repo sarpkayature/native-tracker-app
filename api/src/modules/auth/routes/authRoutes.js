@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken");
 const { user } = require("../../defaults/models/models");
 
 const router = express.Router();
+const secret = process.env.TOKEN_SECRET;
 
 router.post("/signup", async (req, res) => {
   const { email, password } = req.body;
@@ -11,24 +12,24 @@ router.post("/signup", async (req, res) => {
     const User = new user({ email, password });
     await User.save();
 
-    const token = jwt.sign({ userId: User._id }, "MY_SECRET_TOKEN");
+    const token = jwt.sign({ userId: User._id }, secret);
     res.send({ token });
   } catch (err) {
     res.status(422).send(err.message);
   }
 });
 
-router.post("/signup", async (req, res) => {
+router.post("/login", async (req, res) => {
   const { email, password } = req.body;
+
   if (!email || !password) {
     return res.status(422).send({ error: "Invalid password or email" });
   }
-  const user = await user.findOne({ email });
+  const User = await user.findOne({ email });
 
   try {
-    await user.comparePassword(password);
-    const token = jwt.sign({ userId: user._id }, "MY_SECRET_TOKEN");
-
+    await User.comparePassword(password);
+    const token = jwt.sign({ userId: User._id }, secret);
     res.send({ token });
   } catch (err) {
     return res.status(422).send({ error: "Invalid password or email" });
