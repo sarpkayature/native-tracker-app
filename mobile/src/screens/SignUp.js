@@ -1,13 +1,26 @@
-import { Text, View, StyleSheet } from 'react-native'
+import { Text, StyleSheet, Button } from 'react-native'
+import Container from '../components/Container/Container'
+import RouterButton from '../components/Buttons/RouterButton'
 
-const SignUp = () => {
+const SignUp = ({ navigation: { navigate } }) => {
   return (
-    <View>
-      <Text>SignUp</Text>
-    </View>
+    <Container>
+      <Text style={styles.title}>SignUp</Text>
+      <RouterButton
+        title='Do you have Account? Go to Login'
+        onPress={() => navigate('Login')}
+      />
+    </Container>
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  title: {
+    fontSize: 28,
+    color: 'white',
+    fontWeight: '600',
+    textAlign: 'center',
+  },
+})
 
 export default SignUp
