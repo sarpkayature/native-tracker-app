@@ -1,17 +1,18 @@
-import { createStackNavigator } from '@react-navigation/stack'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import SignUp from '../../screens/SignUp'
 import Login from '../../screens/Login'
 
 const PublicRoutes = () => {
-  const { Navigator, Screen } = createStackNavigator()
+  const { Navigator, Screen } = createNativeStackNavigator()
   return (
-    <Navigator initialRouteName='SignUp'>
-      <Screen
-        name='SignUp'
-        component={SignUp}
-        options={{ header: () => null }}
-      />
+    <Navigator
+      initialRouteName='Login'
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
       <Screen name='Login' component={Login} />
+      <Screen name='SignUp' component={SignUp} />
     </Navigator>
   )
 }

@@ -1,24 +1,24 @@
 import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import PublicRoutes from './public-routes/publicRoutes'
 import AuthRoutes from './auth-routes/authRoutes'
 
 const AppNavigator = () => {
-  const { Navigator, Screen } = createStackNavigator()
-
+  const { Navigator, Screen } = createNativeStackNavigator()
+  const auth = false
   return (
     <NavigationContainer>
-      <Navigator>
-        <Screen
-          name='PublicRoutes'
-          component={PublicRoutes}
-          options={{ header: () => null }}
-        />
-        <Screen
-          name='AuthRoutes'
-          component={AuthRoutes}
-          options={{ header: () => null }}
-        />
+      <Navigator
+        screenOptions={{ headerShown: false }}
+        initialRouteName='PublicRoutes'
+      >
+        {auth == false ? (
+          <Screen name='PublicRoutes' component={PublicRoutes} />
+        ) : (
+          <>
+            <Screen name='AuthRoutes' component={AuthRoutes} />
+          </>
+        )}
       </Navigator>
     </NavigationContainer>
   )
