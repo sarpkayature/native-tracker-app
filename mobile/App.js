@@ -1,15 +1,7 @@
-import { StyleSheet, Text, View } from 'react-native'
-import { NavigationContainer } from '@react-navigation/native'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { createStackNavigator } from '@react-navigation/stack'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-
+import { StyleSheet } from 'react-native'
+import AppNavigator from './src/routes/AppNavigator'
 const App = () => {
-  return (
-    <View style={styles.container}>
-      <Text>Page 1</Text>
-    </View>
-  )
+  return <AppNavigator />
 }
 
 const styles = StyleSheet.create({

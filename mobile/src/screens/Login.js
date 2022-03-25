@@ -3,7 +3,7 @@ import { Text, View, StyleSheet } from 'react-native'
 const Login = () => {
   return (
     <View>
-      <Text></Text>
+      <Text>Login</Text>
     </View>
   )
 }

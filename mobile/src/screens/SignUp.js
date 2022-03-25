@@ -3,7 +3,7 @@ import { Text, View, StyleSheet } from 'react-native'
 const SignUp = () => {
   return (
     <View>
-      <Text></Text>
+      <Text>SignUp</Text>
     </View>
   )
 }
