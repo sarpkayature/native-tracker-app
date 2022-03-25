@@ -3,7 +3,7 @@ import { Text, View, StyleSheet } from 'react-native'
 const TrackCreate = () => {
   return (
     <View>
-      <Text></Text>
+      <Text>Create Track</Text>
     </View>
   )
 }

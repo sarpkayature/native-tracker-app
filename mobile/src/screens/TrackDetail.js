@@ -3,7 +3,7 @@ import { Text, View, StyleSheet } from 'react-native'
 const TrackDetail = () => {
   return (
     <View>
-      <Text></Text>
+      <Text>Track Detail</Text>
     </View>
   )
 }

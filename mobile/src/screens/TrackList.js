@@ -1,9 +1,13 @@
 import { Text, View, StyleSheet } from 'react-native'
-
-const TrackList = () => {
+import RouterButton from '../components/Buttons/RouterButton'
+const TrackList = ({ navigation: { navigate } }) => {
   return (
     <View>
-      <Text></Text>
+      <Text>TrackList</Text>
+      <RouterButton
+        title='go back'
+        onPress={() => navigate('PublicRoutes', { screen: 'SignUp' })}
+      />
     </View>
   )
 }
