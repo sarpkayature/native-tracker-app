@@ -1,3 +1,5 @@
+import { useContext, useState } from 'react'
+import { Context as AuthContext } from '../context/AuthContext'
 import { Text, StyleSheet, View } from 'react-native'
 import Container from '../components/Container/Container'
 import RouterButton from '../components/Buttons/RouterButton'
@@ -11,7 +13,7 @@ const Login = ({ navigation }) => {
         <Text style={styles.title}>Login</Text>
         <SInput placeholder='E-mail' />
         <SInput placeholder='Password' secureTextEntry={true} />
-        <IButton title='Login' />
+        <IButton title='Login' onPress={() => {}} />
         <RouterButton
           title="Don't you have Account? Go to Sign Up"
           onPress={() => navigation.navigate('SignUp')}

@@ -1,25 +1,75 @@
-import { Text, StyleSheet, Button } from 'react-native'
+import { useContext, useState } from 'react'
+import { Context as AuthContext } from '../context/AuthContext'
+import { View, Text, StyleSheet, TextInput } from 'react-native'
+import SInput from '../components/Input/SInput'
+import IButton from '../components/Buttons/Button'
 import Container from '../components/Container/Container'
 import RouterButton from '../components/Buttons/RouterButton'
 
 const SignUp = ({ navigation: { navigate } }) => {
+  const { state, SignUp } = useContext(AuthContext)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  console.log(password)
   return (
     <Container>
-      <Text style={styles.title}>SignUp</Text>
-      <RouterButton
-        title='Do you have Account? Go to Login'
-        onPress={() => navigate('Login')}
-      />
+      <View style={styles.view}>
+        <Text style={styles.title}>Sign Up</Text>
+        <TextInput
+          placeholder={'Email'}
+          placeholderTextColor='#F8F8F8'
+          autoCapitalize={'none'}
+          autoCorrect={false}
+          style={styles.input}
+          secureTextEntry={false}
+          onChangeText={text => setEmail(text)}
+          value={email}
+        />
+        <TextInput
+          placeholder={'Password'}
+          placeholderTextColor='#F8F8F8'
+          autoCapitalize={'none'}
+          autoCorrect={false}
+          style={styles.input}
+          secureTextEntry={false}
+          onChangeText={text => setPassword(text)}
+          value={password}
+        />
+        <IButton title='Sign Up' onPress={() => SignUp({ email, password })} />
+        <RouterButton
+          title='Do you have Account? Go to Login'
+          onPress={() => navigate('Login')}
+        />
+      </View>
     </Container>
   )
 }
 
 const styles = StyleSheet.create({
+  view: {
+    height: 560,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   title: {
-    fontSize: 28,
+    fontSize: 36,
+    paddingBottom: 30,
     color: 'white',
     fontWeight: '600',
     textAlign: 'center',
+  },
+  input: {
+    height: 60,
+    width: 300,
+    fontSize: 20,
+    marginBottom: 16,
+    paddingLeft: 16,
+    color: '#F8F8F8',
+    borderWidth: 0.86,
+    borderRadius: 6,
+    padding: 10,
+    borderColor: 'white',
   },
 })
 
