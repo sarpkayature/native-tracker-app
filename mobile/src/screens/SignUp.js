@@ -1,7 +1,6 @@
 import { useContext, useState } from 'react'
 import { Context as AuthContext } from '../context/AuthContext'
 import { View, Text, StyleSheet, TextInput } from 'react-native'
-import SInput from '../components/Input/SInput'
 import IButton from '../components/Buttons/Button'
 import Container from '../components/Container/Container'
 import RouterButton from '../components/Buttons/RouterButton'
@@ -10,13 +9,14 @@ const SignUp = ({ navigation: { navigate } }) => {
   const { state, SignUp } = useContext(AuthContext)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  console.log(password)
+  console.log(state)
+
   return (
     <Container>
       <View style={styles.view}>
         <Text style={styles.title}>Sign Up</Text>
         <TextInput
-          placeholder={'Email'}
+          placeholder='Email'
           placeholderTextColor='#F8F8F8'
           autoCapitalize={'none'}
           autoCorrect={false}
@@ -26,15 +26,20 @@ const SignUp = ({ navigation: { navigate } }) => {
           value={email}
         />
         <TextInput
-          placeholder={'Password'}
+          placeholder='Password'
           placeholderTextColor='#F8F8F8'
-          autoCapitalize={'none'}
+          autoCapitalize='none'
           autoCorrect={false}
           style={styles.input}
-          secureTextEntry={false}
+          secureTextEntry={true}
           onChangeText={text => setPassword(text)}
           value={password}
         />
+
+        {state.errorMessage ? (
+          <Text style={styles.errorMessage}>{state.errorMessage}</Text>
+        ) : null}
+
         <IButton title='Sign Up' onPress={() => SignUp({ email, password })} />
         <RouterButton
           title='Do you have Account? Go to Login'
@@ -70,6 +75,11 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     padding: 10,
     borderColor: 'white',
+  },
+  errorMessage: {
+    color: 'white',
+    fontSize: 16,
+    paddingVertical: 6,
   },
 })
 

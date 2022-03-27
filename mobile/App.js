@@ -1,6 +1,11 @@
+import { Provider as AuthProvider } from './src/context/AuthContext'
 import AppNavigator from './src/routes/AppNavigator'
 const App = () => {
-  return <AppNavigator />
+  return (
+    <AuthProvider>
+      <AppNavigator />
+    </AuthProvider>
+  )
 }
 
 export default App
